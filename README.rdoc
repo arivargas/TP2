@@ -1,0 +1,11 @@
+TP2
+
+Tarea programada 2: Ruby on Rails
+
+Hoy es jueves 27 de setiembre 2012.
+El profesor Andrei Fuentes quiere un README.rdoc en GitHub.
+Intentándolo.
+
+Cambio y fuera.
+
+
