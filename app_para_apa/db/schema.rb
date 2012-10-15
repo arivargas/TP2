@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121015022459) do
+ActiveRecord::Schema.define(:version => 20121015213242) do
 
   create_table "contents", :force => true do |t|
     t.string   "author"
@@ -27,9 +27,15 @@ ActiveRecord::Schema.define(:version => 20121015022459) do
     t.integer  "User_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.date     "find_date"
     t.string   "pub_date"
     t.integer  "ref_type"
+    t.integer  "ref_day"
+    t.integer  "ref_month"
+    t.integer  "pub_day"
+    t.integer  "pub_month"
+    t.integer  "pub_year"
+    t.integer  "ref_year"
+    t.string   "ref_date"
   end
 
   add_index "contents", ["User_id"], :name => "index_contents_on_User_id"

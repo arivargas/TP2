@@ -17,6 +17,8 @@
     <button>Add more authors</button>
     <label>If there's no author, write down <strong>Anonymous</strong></label>
   </div>
+  
+  
   <div class="field">
 	<% if f.ref_type == 1 %>	    
     <%= f.label :Book_title %><br />
@@ -24,8 +26,10 @@
     <%= f.label :Chapter_title %><br />
    <% elsif f.ref_type == 3 %>
     <%= f.label :Thesis_title %><br />
-   <% elsif f.ref_type => 4 and f.ref_type <= 6 %>
+   <% elsif f.ref_type >= 4 and f.ref_type <= 6 %>
     <%= f.label :Article_title %><br />
+   <% else f.ref_type == 7 %>
+    <%= f.label :Document_title %><br />
    <% end %>    
     <%= f.text_field :title1, :required => true, :placeholder => 'Title' %>
   </div>
@@ -41,6 +45,7 @@
    <% elsif f.ref_type == 6 %>
     <%= f.label :Newspaper_title %><br />
     <%= f.text_field :title2, :placeholder => 'Title' %>
+   <% end %>
   </div>
   
   
@@ -50,23 +55,50 @@
     <label>If there's no date, write down <strong>n.d. or s.f</strong></label>
   </div> 
 
-
+<% if f.ref_type >= 1 and f.ref_type =< 3  %>
   <div class="field">
     <%= f.label :Edition %><br />
     <%= f.text_field :edition %>
   </div>
 
-
   <div class="field">
     <%= f.label :Publication_house %><br />
     <%= f.text_field :pub_house %>
   </div>
+  <div class="field">
+    <%= f.label :Publication_place %><br />
+    <%= f.text_field :pub_place %>
+  </div>
+<% end %>
 
+<% if f.ref_type >= 4 and f.ref_type =< 6  %>
+  <div class="field">
+    <%= f.label :Volume %><br />
+    <%= f.text_field :volume %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Journal_number %><br />
+    <%= f.text_field :journal_num %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Pages %><br />
+    <%= f.text_field :pages %>
+  </div>
+<% end %>
 
   <div class="field">
     <%= f.label :Reference_date %><br />
     <%= f.date_select :find_date %>
   </div>
+ 
+<% if f.ref_type == 7  %> 
+  <div class="field">
+    <%= f.label :Website %><br />
+    <%= f.text_field :website %>
+  </div>
+<% end %>
   
 
   <div class="actions">

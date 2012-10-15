@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
   # GET /contents.json
   def index
     @contents = Content.all
-    @contents.user_id = params[:user_id]
+    #@contents.User_id = params[:user_id]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,16 +29,9 @@ class ContentsController < ApplicationController
     @content.ref_type = params[:type]
 
     respond_to do |format|
-    	if (@content.ref_type >= 1) and  (@content.ref_type <= 3)
-      	norecurrentformat.html # new.html.erb
-      	norecurrentformat.json { render json: @content }
-      elsif (@content.ref_type >= 4) and  (@content.ref_type <= 6)
-      	currentformat.html # new.html.erb
-      	currentformat.json { render json: @content }
-      else
-      	format.html # new.html.erb
-      	format.json { render json: @content }
-      end
+    	format.html # new.html.erb
+      format.json { render json: @content }
+
     end
   end
 

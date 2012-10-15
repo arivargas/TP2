@@ -29,6 +29,8 @@
    <% end %>    
     <%= f.text_field :title1, :required => true, :placeholder => 'Title' %>
   </div>
+
+
   <div class="field">
    <% if f.ref_type == 2 %>
     <%= f.label :Book_title %><br />
@@ -40,19 +42,27 @@
     <%= f.label :Newspaper_title %><br />
     <%= f.text_field :title2, :placeholder => 'Title' %>
   </div>
+  
+  
   <div class="field">
     <%= f.label :Publication_date %><br />
     <%= f.text_field :find_date, :required => true, :placeholder => 'YYYY/MM/DD'%>
     <label>If there's no date, write down <strong>n.d. or s.f</strong></label>
   </div> 
+
+
   <div class="field">
     <%= f.label :Edition %><br />
     <%= f.text_field :edition %>
   </div>
+
+
   <div class="field">
     <%= f.label :Publication_house %><br />
     <%= f.text_field :pub_house %>
   </div>
+
+
   <div class="field">
     <%= f.label :Reference_date %><br />
     <%= f.date_select :find_date %>
